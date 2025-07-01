@@ -1,6 +1,11 @@
 # Python virtual environment
 api/venv/
 
+#build files
+client/build/
+client/dist/
+
+
 # Logs
 logs
 *.log
