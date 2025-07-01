@@ -30,3 +30,23 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+
+
+# Uploads or temp image files
+uploads/
+*.jpg
+*.png
+*.jpeg
+
+# VS Code
+.vscode/
+
+# Environment files
+.env
+.env.local
