@@ -50,3 +50,9 @@ uploads/
 # Environment files
 .env
 .env.local
+
+
+api/__pycache__/
+api/uploads/
+api/sketches/
+
