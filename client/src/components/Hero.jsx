@@ -8,8 +8,8 @@ export default function Hero() {
   const [loading, setLoading] = useState(false);
   const [sketchUrl, setSketchUrl] = useState(null);
 
-  const API_BASE = import.meta.env.VITE_API_URL;
-
+  
+const API_BASE = import.meta.env.VITE_API_URL;
   // open file dialog
   const openFileDialog = () => {
     fileInputRef.current?.click();
@@ -70,7 +70,7 @@ const uploadAndSketch = async (file) => {
 
     // call Flask POST route
     console.log("POSTING to /sketch ")
-    const res = await fetch(`{$API_BASE}/sketch`, {
+    const res = await fetch('https://sketchify-lp96.onrender.com/sketch', {
     method: 'POST',                
     body: formData,  // raw multipart form data
   });
