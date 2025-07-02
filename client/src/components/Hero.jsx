@@ -8,6 +8,8 @@ export default function Hero() {
   const [loading, setLoading] = useState(false);
   const [sketchUrl, setSketchUrl] = useState(null);
 
+  const API_BASE = import.meta.env.VITE_API_URL;
+
   // open file dialog
   const openFileDialog = () => {
     fileInputRef.current?.click();
@@ -17,9 +19,9 @@ export default function Hero() {
   const handleFiles = async(files) => {
     if (!files || files.length === 0) return;
     const file = files[0];
+    setSelectedFile(file);
     
     //upload file or store it in form data
-    setSelectedFile(file);
     const data = new FormData()
     data.append("file" , file)
     data.append("upload_preset" , 'Sketchify')
@@ -68,7 +70,7 @@ const uploadAndSketch = async (file) => {
 
     // call Flask POST route
     console.log("POSTING to /sketch ")
-    const res = await fetch('http://localhost:5000/sketch', {
+    const res = await fetch('{$API_BASE}/sketch', {
     method: 'POST',                
     body: formData,  // raw multipart form data
   });
