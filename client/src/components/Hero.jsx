@@ -70,7 +70,7 @@ const uploadAndSketch = async (file) => {
 
     // call Flask POST route
     console.log("POSTING to /sketch ")
-    const res = await fetch('{$API_BASE}/sketch', {
+    const res = await fetch(`{$API_BASE}/sketch`, {
     method: 'POST',                
     body: formData,  // raw multipart form data
   });
