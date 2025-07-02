@@ -19,6 +19,10 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/", methods=["GET"])
+def health_check():
+    return "✅ Sketchify API is up and running!", 200
+
 @app.route('/sketch', methods=['POST'])
 def sketch_image():
     try:
